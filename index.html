@@ -294,26 +294,8 @@
             <h1 id="File-Reader"><a href="#File-Reader" class="headerlink" title="File Reader"></a>File Reader</h1><h2 id="Web-API"><a href="#Web-API" class="headerlink" title="Web API"></a>Web API</h2><ul>
 <li><a href="https://developer.mozilla.org/zh-CN/docs/Web/API/FileReader" target="_blank" rel="external">https://developer.mozilla.org/zh-CN/docs/Web/API/FileReader</a><h2 id="使用FileReader对象-web应用程序可以异步的读取存储在用户计算机上的文件-或者原始数据缓冲-内容-可以使用File对象或者Blob对象来指定所要处理的文件或数据-其中File对象可以是来自用户在一个input元素上选择文件后返回的FileList对象-也可以来自拖放操作生成的-DataTransfer对象-还可以是来自在一个HTMLCanvasElement上执行GetAsFile-方法后的返回结果"><a href="#使用FileReader对象-web应用程序可以异步的读取存储在用户计算机上的文件-或者原始数据缓冲-内容-可以使用File对象或者Blob对象来指定所要处理的文件或数据-其中File对象可以是来自用户在一个input元素上选择文件后返回的FileList对象-也可以来自拖放操作生成的-DataTransfer对象-还可以是来自在一个HTMLCanvasElement上执行GetAsFile-方法后的返回结果" class="headerlink" title="使用FileReader对象,web应用程序可以异步的读取存储在用户计算机上的文件(或者原始数据缓冲)内容,可以使用File对象或者Blob对象来指定所要处理的文件或数据.其中File对象可以是来自用户在一个input元素上选择文件后返回的FileList对象,也可以来自拖放操作生成的 DataTransfer对象,还可以是来自在一个HTMLCanvasElement上执行GetAsFile()方法后的返回结果."></a>使用FileReader对象,web应用程序可以异步的读取存储在用户计算机上的文件(或者原始数据缓冲)内容,可以使用File对象或者Blob对象来指定所要处理的文件或数据.其中File对象可以是来自用户在一个input元素上选择文件后返回的FileList对象,也可以来自拖放操作生成的 DataTransfer对象,还可以是来自在一个HTMLCanvasElement上执行GetAsFile()方法后的返回结果.</h2></li>
 </ul>
-<h2 id="创建一个对象"><a href="#创建一个对象" class="headerlink" title="创建一个对象"></a>创建一个对象</h2><blockquote>
-<p>var reader = new FileReader();</p>
-</blockquote>
-<h2 id="读取一个文件"><a href="#读取一个文件" class="headerlink" title="读取一个文件"></a>读取一个文件</h2><blockquote>
-<p><script type="text/javascript"><br>    // input <code>type = file</code><br>    var oIcon = document.getElementById(‘icon’);<br>    // img tag to show selected image<br>    var oShow = document.getElementById(‘show’);</p>
-</blockquote>
-<pre><code>oIcon.onchange = function(){
-    var file = this.files[0];
+<h2 id="创建一个对象"><a href="#创建一个对象" class="headerlink" title="创建一个对象"></a>创建一个对象</h2><figure class="highlight plain"><figcaption><span>reader = new FileReader();```</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br><span class="line">## 读取一个文件</span><br><span class="line">``` &lt;script type=&quot;text/javascript&quot;&gt;</span><br><span class="line">	// input `type = file`</span><br><span class="line">	var oIcon = document.getElementById(&apos;icon&apos;);</span><br><span class="line">	// img tag to show selected image</span><br><span class="line">	var oShow = document.getElementById(&apos;show&apos;);</span><br><span class="line"></span><br><span class="line">	oIcon.onchange = function()&#123;</span><br><span class="line">		var file = this.files[0];</span><br><span class="line">		</span><br><span class="line">		var reader = new FileReader();</span><br><span class="line">		reader.readAsDataURL(file);</span><br><span class="line">		reader.onload = function(e)&#123;</span><br><span class="line">			// base64</span><br><span class="line">			// console.log(this.result);</span><br><span class="line">			</span><br><span class="line">			oShow.src = this.result;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;;	</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
 
-    var reader = new FileReader();
-    reader.readAsDataURL(file);
-    reader.onload = function(e){
-        // base64
-        // console.log(this.result);
-
-        oShow.src = this.result;
-    }
-};
-</code></pre><p></script></p>
-</blockquote>
           
         
       
